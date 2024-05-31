@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Btn(){
+            let x = parseFloat(document.getElementById("num1").value);
+            let y = parseFloat(document.getElementById("num2").value);
+
+            let sum = x + y;
+            let diff = x - y;
+            let product = x * y;
+            let quotient = x / y;
+            
+            let output=document.getElementById("output");
+
+            output.textContent = "Sum: " + sum + " Difference: " + diff + " Product: " + product + " Quotient: " + quotient;
+            
+            if(sum > 50){
+                output.style.color="Blue";
+
+            }else{
+                output.style.color="Red";
+            }
+            if(diff<50){
+                document.getElementById("imgOutput").src = "Cat.jpg";
+            }else{
+                document.getElementById("imgOutput").src = "Dog.jpg";
+            }
+            if(product > 500){
+                document.getElementById("body").style.background ="Green";
+
+            }else{
+                document.getElementById("body").style.background ="orange";
+            }
+
+
+        }
+    </script>
+</head>
+<body id="body">
+    
+    <label for="num1">Enter Number 1 </label>
+    <input type="number" id="num1" name="num1" placeholder="Enter Number" required> 
+    <label for="num2">Enter Number 2 </label>
+    <input type="number" id="num2" name="num2" placeholder="Enter Number" required>
+    <img src="" alt="" id="imgOutput">
+    <p id="output"></p>
+    <input type="submit" onclick="Btn()" id="submitBtn" value="Compute">
+</body>
+</html>
